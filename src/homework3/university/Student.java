@@ -5,24 +5,27 @@ import java.util.List;
 import java.util.Objects;
 
 import lombok.Data;
+import lombok.NonNull;
 
 
 @Data
 public class Student {
+	@NonNull
 	private int universenum; //학번
+	@NonNull
 	private int age; 	//나이
+	@NonNull
 	private String name; //이름
 	
 	List<Lecture> lecture=new ArrayList<Lecture>(); //강의 리스트
 	
 	
 	int score;
-
+	
 
 	@Override
 	public String toString() {
-		return "학생 [학번 = " + universenum + ", age = " + age + ", name = " + name + ", lecture = " + lecture
-				+ ", score = " + score + "]";
+		return "학생 [학번 = " + universenum + ", 나이 = " + age + ", 이름 = " + name + ", [ 강의 = " + lecture;
 	}
 
 
@@ -50,17 +53,6 @@ public class Student {
 		this.universenum = universenum;
 		this.age = age;
 		this.name = name;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 }

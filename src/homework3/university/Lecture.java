@@ -1,3 +1,4 @@
+
 package homework3.university;
 
 import java.util.ArrayList;
@@ -5,15 +6,22 @@ import java.util.List;
 import java.util.Objects;
 
 import lombok.Data;
+import lombok.NonNull;
 
 @Data
 public class Lecture {
 	
-	
+	@NonNull
 	int lecnumber; //강의 번호
+	@NonNull
 	String lecname; //강의 이름
+	
+	int score; //강의 점수
+	
 	int acceptnumber=0; //현재 수용 강의 인원
-	int maxacceptnumber; //최대 수용 강의 인원
+	int maxacceptnumber=20; //최대 수용 강의 인원
+	
+	
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -36,14 +44,5 @@ public class Lecture {
 		this.lecnumber = lecnumber;
 		this.lecname = lecname;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
