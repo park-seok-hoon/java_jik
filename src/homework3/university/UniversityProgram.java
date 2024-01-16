@@ -91,13 +91,13 @@ public class UniversityProgram implements Program{
 		
 			switch(menu) {
 			case 1:
-				addProfessor();
+				addProfessor(); //교수 추가
 				break;
 			case 2:
-				setProfessor();
+				setProfessor(); //교수 수정
 				break;
 			case 3:
-				deleteProfessor();
+				deleteProfessor(); //교수 삭제
 				break;
 			case 4:
 				System.out.println("이전 메뉴로 돌아갑니다.");
@@ -114,8 +114,42 @@ public class UniversityProgram implements Program{
 	
 	}
 	private void setProfessor() { //교수 수정
+		printService.printProfessorFixedMenu();
+		int menu=scan.nextInt();
+		
+		switch(menu) {
+		case 1:
+			setProfessorId(); //교수 번호 수정
+			break;
+		case 2:
+			setProfessorAge(); //교수 나이 수정
+			break;
+		case 3:
+			setProfessorName(); //교수 이름 수정
+			break;
+		case 4:
+			System.out.println("이전 메뉴로 돌아갑니다.");
+			break;
+		default:
+			throw new InputMismatchException();
+	}
+
 		
 		
+	}
+	
+	//교수 번호 수정
+	private void setProfessorId() {
+		
+	}
+
+	//교수 나이 수정
+	private void setProfessorAge() {
+		
+	}
+
+	 //교수 이름 수정
+	private void setProfessorName() {
 		
 	}
 
@@ -123,31 +157,6 @@ public class UniversityProgram implements Program{
 		
 	}
 
-	private void  printProfessorFixed() {
-		printService.printProfessorFixedMenu();
-		int menu=scan.nextInt();
-			
-			switch(menu) {
-				case 1:
-					addProfessor();
-					break;
-				case 2:
-					setProfessor();
-					break;
-				case 3:
-					deleteProfessor();
-					break;
-				case 4:
-					System.out.println("이전 메뉴로 돌아갑니다.");
-					break;
-				default:
-					throw new InputMismatchException();
-			}
-	
-		
-		
-	}
-	
 	
 	
 	private void managestudent() { //학생 메뉴
@@ -172,15 +181,7 @@ public class UniversityProgram implements Program{
 		
 	}
 	private void addStudent() { //학생 추가
-		System.out.println("학생 학번을 입력하세요.");
-		int universenum=scan.nextInt();	
-		System.out.println("학생 나이를 입력하세요.");
-		int age=scan.nextInt();
-		System.out.println("학생 이름을 입력하세요.");
-		String name=scan.next();
-		Student student=new Student(universenum, age, name);
 		
-		studlist.add(student);
 		
 	}
 
@@ -197,41 +198,7 @@ public class UniversityProgram implements Program{
 	
 		
 	}
-	/*
-	private void managedepartment() {	//학과 관리
-		printService.printdepartmentMenu();
-		int menu = scan.nextInt();
-		switch(menu) {
-		case 1:
-			addDepartment();
-			break;
-		case 2:
-			setDepartment();
-			break;
-		case 3:
-			deleteDepartment();
-			break;
-		case 4:
-			System.out.println("이전 메뉴로 돌아갑니다.");
-			break;
-		default:
-			throw new InputMismatchException();
-	}
-}
-	
 
-	private void addDepartment() {	//학과 추가
-		
-	}
-
-	private void setDepartment() { //학과 수정
-		
-	}
-
-	private void deleteDepartment() { //학과 삭제
-		
-	}
-*/
 	private void managesignup() { //수강 관리
 		printService.printsignupMenu();
 		int menu = scan.nextInt();

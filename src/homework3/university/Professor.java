@@ -28,7 +28,7 @@ public class Professor {
 
 	@Override
 	public String toString() {
-		return "Professor [ 교수번호 = " + id + " , 나이 = " + age + " , 이름 = " + name + " , 강의 " + lecture + "]";
+		return "[교수번호 = " + id + " , 나이 = " + age + " , 이름 = " + name + " , 강의 " + lecture + "]";
 	}
 
 

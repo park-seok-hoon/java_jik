@@ -11,7 +11,7 @@ import lombok.NonNull;
 @Data
 public class Student {
 	@NonNull
-	private int universenum; //학번
+	private int studNum; //학번
 	@NonNull
 	private int age; 	//나이
 	@NonNull
@@ -19,13 +19,16 @@ public class Student {
 	
 	List<Lecture> lecture=new ArrayList<Lecture>(); //강의 리스트
 	
+	List<Major> departlist=new ArrayList<Major>();
 	
-	int score;
+	
+	
+
 	
 
 	@Override
 	public String toString() {
-		return "학생 [학번 = " + universenum + ", 나이 = " + age + ", 이름 = " + name + ", [ 강의 = " + lecture;
+		return "학생 [ 학번 = " + studNum + ", 나이 = " + age + ", 이름 = " + name + ", [ 강의 = " + lecture + " ] "+ " 학과 = " ;
 	}
 
 
@@ -38,19 +41,19 @@ public class Student {
 		if (getClass() != obj.getClass())
 			return false;
 		Student other = (Student) obj;
-		return universenum == other.universenum;
+		return studNum == other.studNum;
 	}
 
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(universenum);  //학번 
+		return Objects.hash(studNum);  //학번 
 	}
 
 
-	public Student(int universenum, int age, String name) {	//학번,나이,이름 입력 받으면 집어넣을 생성자
+	public Student(int studNum, int age, String name) {	//학번,나이,이름 입력 받으면 집어넣을 생성자
 		super();
-		this.universenum = universenum;
+		this.studNum = studNum;
 		this.age = age;
 		this.name = name;
 	}	

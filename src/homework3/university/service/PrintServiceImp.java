@@ -3,15 +3,16 @@ package homework3.university.service;
 
 public class PrintServiceImp implements PrintService {
 
+	//교수 메뉴 시작
 	@Override
 	public void printMainMenu() {		
 		
 		System.out.println("-------메뉴-------");
 		System.out.println("1. 교수 메뉴");
 		System.out.println("2. 학생 메뉴");
-		System.out.println("3. 관리자 전공 관리");
-		System.out.println("4. 대학교 조회 ");
-		System.out.println("프로그램 종료");
+		System.out.println("3. 관리자 전공 관리 메뉴");
+		System.out.println("4. 대학교 조회 메뉴 ");
+		System.out.println("5.프로그램 종료");
 		System.out.print("메뉴 선택 : ");
 	}
 
@@ -87,6 +88,9 @@ public class PrintServiceImp implements PrintService {
 		
 	}
 	
+//교수 메뉴 끝	
+	
+//학생 메뉴 시작
 	
 	@Override
 	public void printStudentMenu() {
@@ -134,6 +138,8 @@ public class PrintServiceImp implements PrintService {
 		System.out.print(" 메뉴 선택 : ");
 		
 	}
+	
+//학생 메뉴 끝
 
 	@Override
 	public void printMajorManagementMenu() {
