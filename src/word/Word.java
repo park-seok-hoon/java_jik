@@ -84,7 +84,7 @@ public class Word {
 		return "단어 : " + engwords + "\n" + meanlist + "\n조회수 : "+ views;
 	}
 	
-	public String get
+
 
 	
 	

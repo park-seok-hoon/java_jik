@@ -23,13 +23,13 @@ public class Professor {
 		return Objects.hash(id);
 	}
 
-
 	
 
-	@Override
-	public String toString() {
-		return "[교수번호 = " + id + " , 나이 = " + age + " , 이름 = " + name + " , 강의 " + lecture + "]";
+	public Professor(int id) { //교수 생성자 번호
+		super();
+		this.id = id;
 	}
+
 
 
 	@Override
@@ -45,10 +45,14 @@ public class Professor {
 	}
 
 
-	public Professor(int id, int age, String name) {
+	public Professor(int id, int age, String name) { //교수 생성자 입력:번호,나이,이름
 		this.id = id;
 		this.age = age;
 		this.name = name;
 	}
 	
+	@Override
+	public String toString() {
+		return "[교수번호 = " + id + " , 나이 = " + age + " , 이름 = " + name + " , 강의 " + lecture + "]";
+	}
 }

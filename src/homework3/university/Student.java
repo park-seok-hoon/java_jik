@@ -19,7 +19,7 @@ public class Student {
 	
 	List<Lecture> lecture=new ArrayList<Lecture>(); //강의 리스트
 	
-	List<Major> departlist=new ArrayList<Major>();
+	List<Major> departlist=new ArrayList<Major>(); 
 	
 	
 	

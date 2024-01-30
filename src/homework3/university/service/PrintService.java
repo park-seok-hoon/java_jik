@@ -23,14 +23,12 @@ public interface PrintService {
 	 void printStudentFixedMenu(); //학생 수정
 	
 	void printStudentSubjectsManagementMenu(); // 학생 수강 과목 관리
-	
-	void printMajorManagementMenu(); // 관리자 전공 관리 
-	
-	void SearchMenu(); //조회 메뉴
+
+	void universeSearchMenu(); //대학교 조회 메뉴
 	
 	void StudentSearchMenu(); //학생 조회 
 	
-	
+	void professorSearchMenu(); //교수 조회
 	
 	void printExit(); //종료 메뉴
 	

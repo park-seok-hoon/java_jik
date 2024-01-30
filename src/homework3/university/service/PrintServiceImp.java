@@ -4,16 +4,16 @@ package homework3.university.service;
 public class PrintServiceImp implements PrintService {
 
 	//교수 메뉴 시작
+	
 	@Override
 	public void printMainMenu() {		
 		
 		System.out.println("-------메뉴-------");
 		System.out.println("1. 교수 메뉴");
 		System.out.println("2. 학생 메뉴");
-		System.out.println("3. 관리자 전공 관리 메뉴");
-		System.out.println("4. 대학교 조회 메뉴 ");
-		System.out.println("5.프로그램 종료");
-		System.out.print("메뉴 선택 : ");
+		System.out.println("3. 대학교 조회 메뉴 ");
+		System.out.println("4.프로그램 종료");
+		System.out.print(" 메뉴 선택 : ");
 	}
 
 	@Override
@@ -88,16 +88,16 @@ public class PrintServiceImp implements PrintService {
 		
 	}
 	
-//교수 메뉴 끝	
+	//교수 메뉴 끝	
 	
-//학생 메뉴 시작
+	//학생 메뉴 시작
 	
 	@Override
 	public void printStudentMenu() {
 		
 		System.out.println("----학생 메뉴---");
 		System.out.println("1. 학생 관리 ");
-		System.out.println("2. 학생 수강 과목 관리 ");
+		System.out.println("2. 학생 수강 강의 관리 ");
 		System.out.println("3. 프로그램 종료 ");
 		System.out.print("메뉴 선택 : ");
 		
@@ -130,61 +130,48 @@ public class PrintServiceImp implements PrintService {
 	@Override
 	public void printStudentSubjectsManagementMenu() {
 		
-		System.out.println("----학생 수강 과목 관리---");
-		System.out.println("1. 학생 수강과목 추가");
-		System.out.println("2. 학생 수강과목 수정");
-		System.out.println("3. 학생 수강과목 삭제");
+		System.out.println("----학생 수강 강의 관리---");
+		System.out.println("1. 학생 수강 강의 추가");
+		System.out.println("2. 학생 수강 강의 수정");
+		System.out.println("3. 학생 수강 강의 삭제");
 		System.out.println("4. 뒤로 가기");
 		System.out.print(" 메뉴 선택 : ");
 		
 	}
 	
-//학생 메뉴 끝
+	//학생 메뉴 끝
 
+	//대학교 조회 메뉴 시작
 	@Override
-	public void printMajorManagementMenu() {
-		System.out.println("----관리자 전공 관리---");
-		System.out.println("1. 전공 추가");
-		System.out.println("2. 전공 수정");
-		System.out.println("3. 전공 삭제");
-		System.out.println("4. 뒤로 가기");
-		System.out.print("메뉴 선택 : ");
-	}
-
-	@Override
-	public void SearchMenu()
+	public void universeSearchMenu()
 	{
-		System.out.println("----대학교 조회----"); 
+		System.out.println("----대학교 조회 메뉴----"); 
 		System.out.println("1. 전체 조회");
 		System.out.println("2. 학생별 조회"); 
 		System.out.println("3. 교수별 조회"); 
-		System.out.println("4. 과목별 조회"); 
-		System.out.println("5. 뒤로 가기");
-		System.out.print("메뉴 선택 : ");
-		
-	}
-	
-	
-	
-	public void StudentSearchMenu()
-	{	
-		System.out.println("----학생별 조회---");
 		System.out.println("4. 뒤로 가기");
-		System.out.print("메뉴 선택 : ");
+		System.out.print(" 메뉴 선택 : ");
 		
 	}
-	
-	public void ScoreSearchMenu()
-	{
-		
-	}
-	
 
 	@Override
 	public void printExit() {
 		System.out.println("================");
 		System.out.println("프로그램을 종료합니다.");
 		System.out.println("================");
+	}
+
+
+	//학생 조회
+	@Override
+	public void StudentSearchMenu() {
+		
+	}
+	
+	//교수 조회
+	@Override
+	public void professorSearchMenu() {
+		
 	}
 	
 
