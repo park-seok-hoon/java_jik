@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class MemberVO {
+public class MemberVO { //사용자
 	String mb_id,mb_pw,mb_email;
 	int mb_age;
 	String mb_localnum;

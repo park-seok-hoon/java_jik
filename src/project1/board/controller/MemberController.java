@@ -17,7 +17,7 @@ public class MemberController {
 	private MemberVO memberVo;
 	private Scanner scan = new Scanner(System.in);
 	private PrintService printService = new PrintServiceImp();
-	
+	private PostController postController =new PostController();
 	
 	
 	public MemberVO login() {
@@ -77,6 +77,7 @@ public class MemberController {
 	private void runUser(int menu) {
 		switch(menu) {
 		case 1:
+			postController.writePost();
 			break;
 		case 2:
 			break;

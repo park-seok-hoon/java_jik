@@ -23,4 +23,8 @@ public class BoardController {
 			break;
 		}
 	}
+
+	public void run() {
+		
+	}
 }
