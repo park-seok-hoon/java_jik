@@ -78,14 +78,14 @@ public class AccountController {
 		}
 		
 		//삭제할 내역이 있으면 삭제 가능한 내역을 출력
-		for(Item item : itemList) { //item데이터베이스가 있으면 itemlist를 출력
+		for(Item item : itemList) { 	//item데이터베이스가 있으면 itemlist를 출력
 			System.out.println(item);
 		}
 		System.out.println("내역 번호를 선택하세요 : ");  //itemlist의 내역 번호를 고르기 위해 추가
 		
 		int it_num = scan.nextInt();
 		//입력한 내역 번호가 잘못된 값인지 확인
-		if(!itemList.contains(new Item(it_num))) { //Item(it_num) it_num을 가지는 Item의 생성자를 추가해줘라는 의미
+		if(!itemList.contains(new Item(it_num))) { 	//Item(it_num) it_num을 가지는 Item의 생성자를 추가해줘라는 의미
 			System.out.println("잘못된 내역 번호입니다.");
 			return;
 		}
