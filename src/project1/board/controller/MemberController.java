@@ -58,15 +58,19 @@ public class MemberController {
 		MemberVO member = new MemberVO(id,pw,email,age,localnum,role);
 		
 		if(memberService.signIn(member)) {
+			System.out.println("회원가입 성공");
 			return true;
 		};
-		
+		System.out.println("회원가입 실패");
 		return false;
 	}
 
 	public void run() {
 		int menu = 0;
 		do {
+			if(memberVo==null) {
+				break;
+			}
 			printService.loggedinUserMenu();
 			menu=scan.nextInt();
 			runUser(menu);
@@ -77,7 +81,7 @@ public class MemberController {
 	private void runUser(int menu) {
 		switch(menu) {
 		case 1:
-			postController.writePost();
+			postController.postManagement();
 			break;
 		case 2:
 			break;
@@ -90,6 +94,7 @@ public class MemberController {
 			break;
 		case 6:
 			System.out.println("로그아웃 합니다.");
+			memberVo = null;
 			break;
 		}
 		

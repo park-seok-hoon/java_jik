@@ -11,6 +11,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import project1.board.dao.PostDAO;
+import project1.board.model.vo.MemberVO;
+import project1.board.model.vo.PostCategoryVO;
 import project1.board.model.vo.PostVO;
 
 public class PostServiceImp implements PostService {
@@ -30,16 +32,38 @@ public class PostServiceImp implements PostService {
 		}
 	}
 
-	@Override
-	public boolean write(PostVO postVo) {
-		
-		boolean res = postDAO.writePost(postVo);
-		if(res) {
-			session.commit();
-		}
-		
-		return res;
+	@Override	//게시글 조회
+	public List<PostVO> getPostList() {
+		return postDAO.selectPostList();
 	}
+
+	@Override
+	public List<PostCategoryVO> getPostCategoryList() {//게시글 카테고리 리스트 조회
+		
+		return postDAO.selectPostCategoryList();
+	}
+
+	@Override
+	public boolean writePost(PostVO post) {
+		if(post ==null
+			|| 	post.getPo_title() 	==null
+			||	post.getPo_content()==null
+			||	post.getPo_mb_id()	==null
+			) {
+		
+		return false;
+	}
+	boolean res = postDAO.writePost(post);
+	if(res) {
+		session.commit();
+	}
+	return res;
+}
 	
 
+
 }
+
+	
+
+

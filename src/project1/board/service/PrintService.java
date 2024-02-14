@@ -12,4 +12,6 @@ public interface PrintService {
 	void loggedinUserMenu();
 	void loggedinAdminMenu();
 	void updateMyInfo();
+	
+	void postManagement();
 }

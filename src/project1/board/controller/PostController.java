@@ -1,9 +1,11 @@
 package project1.board.controller;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Scanner;
 
 import project1.board.model.vo.MemberVO;
+import project1.board.model.vo.PostCategoryVO;
 import project1.board.model.vo.PostVO;
 import project1.board.service.MemberService;
 import project1.board.service.MemberServiceImp;
@@ -28,30 +30,65 @@ public class PostController {
 	private PrintService printService = new PrintServiceImp();
 	
 	
-	private void runPost(int menu) {
+
+
+
+	public void postManagement() {	//게시글 관리 임시
+		int menu=0;
+		printService.postManagement();
+		menu=scan.nextInt();
+		postManagementrun(menu);
 		
+		}
+
 		
+	private void postManagementrun(int menu) {
+		switch(menu) {
+		case 1:
+			printPost();	//게시글 출력
+		case 2:
+			postControll(); //게시글 입력
+		case 3:
 		
+		}
 	}
 
-	public boolean writePost() {
-		System.out.println("게시글을 작성합니다.");
+	private void printPost() {	//게시판 출력
+		System.out.println("게시판 출력");
+		List<PostVO> postVoList =postService.getPostList();	//select문을 쓸때는 postService에 해당리스트를 가져오도록 요청함
+		for(int i=0; i<postVoList.size(); i++) {
+			System.out.println(postVoList);
+		}
+	}
+
+
+	boolean postControll() {
+		System.out.println("게시판 insert");
+		System.out.print("아이디를 입력하세요.");
+		String po_mb_id=scan.next();		
 		
-		System.out.print("게시글 제목을 입력하세요.");
+		System.out.println("게시판");
+		
+		System.out.print("카테고리 번호를 선택하여 주세요.");
+		List<PostCategoryVO> postCategoryList = postService.getPostCategoryList(); //select문을 통해 게시글 분류를 가져옴
+		System.out.println(postCategoryList);
+		int po_pc_num=scan.nextInt();
+		scan.nextLine();
+		System.out.print("게시글에 쓸 제목을 입력하세요 : ");
 		String po_title=scan.next();
-		System.out.print("게시글 내용을 입력하세요.");;
-		String content=scan.next();
-		String po_mb_id="0";
-		int po_bo_num=0;
-		int po_pc_num=0;
 		
-	PostVO postVo = new PostVO(po_title,content,po_mb_id,po_bo_num,po_pc_num);
-	
-	if(postService.write(postVo)) {
-		return true;
-	}
-	return false;
+		System.out.println("게시글에 쓸 내용을 입력하세요 : ");
+		String po_content=scan.nextLine();
 		
-	}
+		PostVO post=new PostVO(po_title,po_content,po_mb_id, po_pc_num);
+		
+		if(postService.writePost(post)) {
+			System.out.println("게시글 등록 성공");
+			return true;
+		};
+			System.out.println("게시글 등록 실패");
+			return false;
 	
+	}
+		
 }
