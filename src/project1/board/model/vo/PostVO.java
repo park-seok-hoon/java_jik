@@ -12,6 +12,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class PostVO {	//게시글
 	int po_num,po_viewCount;
+	
 	String po_title,content;
 	String po_date;
 	int po_notice;
@@ -21,10 +22,6 @@ public class PostVO {	//게시글
 	
 	
 	
-
-
-
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

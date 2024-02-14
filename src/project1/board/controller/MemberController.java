@@ -114,11 +114,9 @@ public class MemberController {
 		case 5:
 			System.out.println("뒤로 돌아갑니다.");
 			break;
-		}
-		
-		
+		}	
 	}
-
+	
 	private void updateAge() {
 		// TODO Auto-generated method stub
 		
