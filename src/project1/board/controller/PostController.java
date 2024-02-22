@@ -76,9 +76,27 @@ public class PostController {
 		scan.nextLine();
 		System.out.print("게시글에 쓸 제목을 입력하세요 : ");
 		String po_title=scan.next();
+<<<<<<< HEAD
 		
 		System.out.println("게시글에 쓸 내용을 입력하세요 : ");
 		String po_content=scan.nextLine();
+=======
+		System.out.print("게시글 내용을 입력하세요.");;
+		String content=scan.next();
+		System.out.print("아이디를 입력하세요.");
+		String po_mb_id=scan.next();
+		System.out.println("게시판 번호를 입력하세요.");
+		int po_bo_num=scan.nextInt();
+		System.out.println("게시글 카테고리 번호를 입력하세요.");
+		int po_pc_num=scan.nextInt();
+		
+		PostVO postVo = new PostVO(po_title,content,po_mb_id,po_bo_num,po_pc_num);
+	
+	if(postService.write(postVo)) {
+		return true;
+	}
+	return false;
+>>>>>>> fe9da2e3450a25f6e437e62392dda395cff510ec
 		
 		PostVO post=new PostVO(po_title,po_content,po_mb_id, po_pc_num);
 		
