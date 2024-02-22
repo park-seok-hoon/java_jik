@@ -1,37 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ë©”ì¸</title>
+<!-- ë¶€íŠ¸ìŠ¤íŠ¸ë©5 css/js -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<%
-		int num=10;
-	%>
-	<h1>¸ŞÀÎ ÆäÀÌÁöÀÔ´Ï´Ù.</h1>
-	<a href="<%=request.getContextPath() %>?data=¾È³ç">µ¥ÀÌÅÍ Àü¼Û</a>
-	<form action="<%=request.getContextPath() %>">
-		<h2>formÅÂ±× get¹æ½Ä Àü¼Û</h2>
-		<input type="text" name="id">
-		<button>Àü¼Û</button> 
-	</form>
-	<h1><%=num %></h1>
-	<h1><%=request.getContextPath() %></h1>
-	<a href="<%=request.getContextPath()%>/login">·Î±×ÀÎÀ¸·Î</a>
-	<a href="<%=request.getContextPath()%>/signup">È¸¿ø°¡ÀÔÀ¸·Î</a>
-	<h1>¼­¹ö¿¡¼­ º¸³½ ³ªÀÌ ${age}</h1>
-	<script type="text/javascript">
-		let age = 20;
-		let str = `³ªÀÌ : \${age}`;
-		console.log(str);
-	</script>
-	<!-- /signupÀ» Ã³¸®ÇÏ´Â ¼­ºí¸´À» Ãß°¡ÇÑ ÈÄ signup.jsp¿Í ¿¬°áÇÏ´Â ÀÛ¾÷ -->
-	${user}
-	
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%=request.getContextPath() %>/">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="<%=request.getContextPath() %>/signup">íšŒì›ê°€ì…</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=request.getContextPath() %>/login">ë¡œê·¸ì¸</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="container">
-	<h1>¸ŞÀÎ ÆäÀÌÁöÀÔ´Ï´Ù.</h1>
+	<h1>ë©”ì¸ í˜ì´ì§€ì…ë‹ˆë‹¤.</h1>
 	<c:forEach begin="1" end="4" var="i">
 	${i },
 	</c:forEach>
