@@ -28,6 +28,13 @@
 		console.log(str);
 	</script>
 	<!-- /signup을 처리하는 서블릿을 추가한 후 signup.jsp와 연결하는 작업 -->
+	${user}
 	
+<div class="container">
+	<h1>메인 페이지입니다.</h1>
+	<c:forEach begin="1" end="4" var="i">
+	${i },
+	</c:forEach>
+</div>
 </body>
 </html>
