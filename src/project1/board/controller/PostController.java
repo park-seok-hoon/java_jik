@@ -41,11 +41,14 @@ public class PostController {
 		String po_title=scan.next();
 		System.out.print("게시글 내용을 입력하세요.");;
 		String content=scan.next();
-		String po_mb_id="0";
-		int po_bo_num=0;
-		int po_pc_num=0;
+		System.out.print("아이디를 입력하세요.");
+		String po_mb_id=scan.next();
+		System.out.println("게시판 번호를 입력하세요.");
+		int po_bo_num=scan.nextInt();
+		System.out.println("게시글 카테고리 번호를 입력하세요.");
+		int po_pc_num=scan.nextInt();
 		
-	PostVO postVo = new PostVO(po_title,content,po_mb_id,po_bo_num,po_pc_num);
+		PostVO postVo = new PostVO(po_title,content,po_mb_id,po_bo_num,po_pc_num);
 	
 	if(postService.write(postVo)) {
 		return true;

@@ -16,12 +16,15 @@ import kr.kh.account.dao.AccountDAO;
 import kr.kh.account.model.vo.Category;
 import kr.kh.account.model.vo.Item;
 import kr.kh.account.model.vo.Type;
+import pagination.Criteria;
 
 public class AccountServiceImp implements AccountService {
 
 	private AccountDAO accountDao;
 	
-	public AccountServiceImp() {
+	public AccountServiceImp() 
+	
+	{	//accountDAO의 객체를 생성해주는 과정
 		String resource = "kr/kh/account/config/mybatis-config.xml";
 		InputStream inputStream;
 		SqlSession session;
@@ -88,5 +91,13 @@ public class AccountServiceImp implements AccountService {
 	@Override
 	public boolean deleteItem(int it_num) { //int 형태 여서  null을 체크할 이유가 없음
 		return accountDao.deleteItem(it_num);
+	}
+
+	@Override
+	public List<Item> getItemListByDate(Criteria cri) {
+		if(cri ==null) {
+			cri = new Criteria();
+		}
+		return accountDao.selectItemListSearch(cri);
 	}
 }

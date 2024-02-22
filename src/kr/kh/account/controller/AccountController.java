@@ -9,6 +9,7 @@ import kr.kh.account.model.vo.Item;
 import kr.kh.account.model.vo.Type;
 import kr.kh.account.service.AccountService;
 import kr.kh.account.service.AccountServiceImp;
+import pagination.Criteria;
 
 public class AccountController {
 	
@@ -100,14 +101,42 @@ public class AccountController {
 	private void view() {
 		System.out.println("날짜를 입력하세요.(yyyy-MM-dd 또는 yyyy-MM 또는 yyyy) : ");
 		String date = scan.next();
-		List<Item> itemList = accountService.getItemListByDate(date);
-		if(itemList == null || itemList.size() == 0) {
+		int page = 1;
+		int menu;
+		
+		do {
+			Criteria cri = new Criteria(page,2); //1페이지당 2개씩 보여주기 위함
+			cri.setSearch(date);
+			List<Item> itemList = accountService.getItemListByDate(cri);
+			
+			if(itemList == null || itemList.size() == 0) {
 			System.out.println("조회할 내역이 없습니다.");
 			return;
+			}
+			else{
+				for(Item tmp : itemList) {
+				System.out.println(tmp);
+				}
+			}
+		System.out.println("1. 이전 페이지");
+		System.out.println("2. 다음 페이지");
+		System.out.println("3. 돌아가기");
+		System.out.println("메뉴 선택 : ");
+		menu=scan.nextInt();
+		
+		switch(menu) {
+		case 1: page=page == 1 ? 1 : page - 1;
+			break;
+		case 2:
+			++page;
+			break;
+		case 3: 
+			System.out.println("조회를 종료합니다.");
+			break;
+		default :
+			System.out.println("잘못 선택");
 		}
-		for(Item tmp : itemList) {
-			System.out.println(tmp);
-		}
+		}while(menu != 3);
 	}
 
 
