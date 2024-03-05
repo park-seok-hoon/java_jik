@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-import kr.kh.app.model.vo.BoardVO;
-import kr.kh.app.model.vo.CommunityVO;
 import kr.kh.app.model.vo.MemberVO;
-import kr.kh.app.service.BoardService;
-import kr.kh.app.service.BoardServiceImp;
+import src.main.java.kr.kh.app.model.vo.BoardVO;
+import src.main.java.kr.kh.app.model.vo.CommunityVO;
+import src.main.java.kr.kh.app.service.BoardService;
+import src.main.java.kr.kh.app.service.BoardServiceImp;
 
 @WebServlet("/board/insert")
 @MultipartConfig(
