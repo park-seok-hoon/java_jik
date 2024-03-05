@@ -1,4 +1,4 @@
-package project1.board.service;
+ package project1.board.service;
 
 public class PrintServiceImp implements PrintService {
 
@@ -79,7 +79,17 @@ public class PrintServiceImp implements PrintService {
 		System.out.print("메뉴 선택 : ");
 		
 	}
-
+	
+	@Override
+	public void postManagement() {
+		System.out.println("--임시 게시글 관리 메뉴--");
+		System.out.println("1.게시판 select문");
+		System.out.println("2.게시판 insert문");
+		System.out.println("3.돌아가기");
+		System.out.println("메뉴 선택 : ");
+		
+	}
+	
 	@Override
 	public void loggedinAdminMenu() {
 		System.out.println("--관리자 메뉴--");

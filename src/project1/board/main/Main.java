@@ -81,10 +81,6 @@ public class Main {
 		case 2:
 			memberController.signIn();
 			break;
-		case 3:
-			System.out.println("프로그램을 종료합니다.");
-			break;
-			
 		}
 		
 	}
@@ -92,15 +88,7 @@ public class Main {
 	private static void runAdminMenu() {
 		int menu =0;
 		do {
-			//System.out.println("--관리자 메뉴--");
-			//System.out.println("1. 게시판 관리");
-			//System.out.println("2. 게시글 관리");
-			//System.out.println("3. 나의 커뮤니티 이용내역");
-			//System.out.println("4. 게시판 보기");
-			//System.out.println("5. 검색 기능");
-			//System.out.println("6. 로그아웃");
-			//System.out.print("메뉴 선택 : ");
-		printService.loggedinAdminMenu();										
+			printService.loggedinAdminMenu();
 			menu = scan.nextInt();
 			loggedInAddminMenu(menu);
 		}while(menu != 6);
@@ -111,8 +99,6 @@ public class Main {
 		case 1:
 			boardController.run();
 			break;
-		case 2:
-		
 		}
 		
 	}

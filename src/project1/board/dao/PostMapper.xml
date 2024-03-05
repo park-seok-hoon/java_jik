@@ -4,10 +4,24 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="project1.board.dao.PostDAO">
 	<!-- 태그에는 insert, select, update, delete가 들어감 -->
-  <insert id="writePost">
+  	<select id="selectPostList" resultType="project1.board.model.vo.PostVO">
+  		select * from post
+  	</select>
+  		
+ 	<select id="selectPostCategoryList" resultType="project1.board.model.vo.PostCategoryVO">
+  		select * from post_category
+  	</select>
+  		
+  	<insert id="writePost">
   		insert into post(po_title,po_content,po_mb_id,po_bo_num,po_pc_num)
+<<<<<<< HEAD
+  		value(#{postVo.po_title},#{postVo.po_content},#{postVo.po_mb_id},#{postVo.po_bo_num},#{postVo.po_pc_num})
+=======
   		values(#{postVo.po_title},	#{postVo.po_content},	#{postVo.po_mb_id},	#{postVo.po_bo_num},	#{postVo.po_pc_num})
   		
+>>>>>>> fe9da2e3450a25f6e437e62392dda395cff510ec
   	</insert>
+  	
+  
   	
 </mapper>
