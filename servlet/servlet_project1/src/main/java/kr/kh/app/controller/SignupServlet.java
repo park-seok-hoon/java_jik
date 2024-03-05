@@ -22,13 +22,10 @@ public class SignupServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(request, response); 
-		//request.getRequestDispatcher/WEB-INF/views/signup.jsp 경로에 있는 파일을 클라이언트에게 보내준다. url에 ?뒤에 나오는 정보들을 통해서 보여줌
-		//FORM ,a태그 밖에 사용할 수 없다.
+		request.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//POST방식은 반드시 FORM 태그를 이용할 수 밖에 없다.
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String email = request.getParameter("email");

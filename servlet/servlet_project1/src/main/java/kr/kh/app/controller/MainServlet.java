@@ -22,12 +22,10 @@ public class MainServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		System.out.println("전송 받은 ID : " + id);
 		
-		//서버에서 화면으로 age를 전송
+		//화면으로 나이를 전송
 		int age = 30;
-		request.setAttribute("age", age);
-		//화면으로 나이를 전송 //앞에 ""는 화면에 나올 데이터 뒤에는 내가 보낼 데이터
+		request.setAttribute("age", age);//서버에서 화면으로 age를 전송
 		request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);
 	}
 
 }
-
